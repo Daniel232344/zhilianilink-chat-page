@@ -280,7 +280,7 @@
 }
 // 聊天界面整体
 .chat {
-  background-color: #e4e4e4 !important;
+  background: linear-gradient(180deg, #e6f3ff 0%, #ffffff 30%) !important;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -356,10 +356,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
   &:hover {
     .chat-message-edit {
       opacity: 0.9;
     }
+    
 
     .chat-message-actions {
       opacity: 1;
@@ -367,6 +369,7 @@
       transform: scale(1) translateY(0);
     }
   }
+  
 }
 
 .chat-message-user>.chat-message-container {
@@ -619,12 +622,13 @@
 .chat-input:focus {}
 
 .chat-input-send {
-  background-color: var(--primary);
-  color: white;
-
+  background-color: #23a1e7 !important;
   position: absolute;
   right: 30px;
   bottom: 32px;
+  &:hover {
+    background-color: #23a2e79a !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
