@@ -1,0 +1,48 @@
+.app-layout {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+
+  .main-layout {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Take remaining height */
+    overflow: hidden; /* Hide overflow to control it manually */
+  }
+
+  .fixed-content {
+    flex: 0 0 auto; /* Fixed height */
+  }
+
+  .dynamic-content {
+    flex: 1; /* Expand to take available space */
+    min-height: 160px;
+    max-height: 170px;
+    min-width: 1550px;
+    max-width: 1650px;
+    width: 100%;
+  }
+
+  .scrollable-footer {
+    flex: 1; /* Take remaining space */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background: #f3f5f8;
+    max-height: 850px;
+    min-width: 850px;
+    background: #f3f5f8;
+  }
+
+  .market-component {
+    flex: 1;
+    width: 100%;
+    margin-bottom: -70px; /* Adjust as needed */
+    min-height: 130px;
+    max-height: 130px;
+  }
+
+  .site-layout-background {
+    background: #fff;
+  }
+}

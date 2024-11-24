@@ -1,0 +1,4 @@
+{
+  // vscode 默认缩进为2个空格
+  "editor.tabSize": 2,
+}

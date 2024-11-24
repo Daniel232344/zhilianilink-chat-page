@@ -1,0 +1,24 @@
+html,
+body{
+    margin: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    #root {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #root {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    #root {
+        padding: 2px;
+    }
+}

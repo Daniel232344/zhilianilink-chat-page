@@ -1,0 +1,48 @@
+/* src/styles/WorkPage.scss */
+.work-body {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+}
+
+.work-sider {
+  background-color: #48525c !important;
+}
+
+.work-header {
+  background-color: #ffffff;
+  align-items: center;
+  border-bottom: 1px solid #cdc8c8;
+}
+
+.work-content {
+  background-color: rgb(255, 255, 255);
+}
+
+.work-main-left,
+.work-main-right {
+  margin-bottom: 24px;
+}
+
+.work-main-left  {
+  margin-top: 24px;
+}
+
+.work-main-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 24px;
+  max-height: 100vh; /* 设置左侧区域的最大高度 */
+  overflow-y: auto !important; /* 使左侧区域可以垂直滚动 */
+  padding-top: 14px;/* 内边距，可以根据需要调整 */
+  background-color: #fff; /* 背景颜色，可以根据需要调整 */
+}
+
+.work-panel {
+  background-color: #efefef;
+  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}

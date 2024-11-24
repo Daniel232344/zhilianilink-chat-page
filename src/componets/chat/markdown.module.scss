@@ -1,0 +1,29 @@
+/* 样式文件，比如 styles.css */
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
+  display: block;
+}
+
+.image-container::after {
+  content: "下载图片";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* 确保文本不能被点击 */
+}
+
+.image-container:hover::after {
+  opacity: 1;
+}

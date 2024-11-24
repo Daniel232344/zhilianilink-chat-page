@@ -1,0 +1,73 @@
+.settings {
+  padding: 20px !important;
+  overflow: auto !important;
+}
+
+.avatar {
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.edit-prompt-modal {
+  display: flex !important;
+  flex-direction: column !important;
+
+  .edit-prompt-title {
+    max-width: unset !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+  }
+  .edit-prompt-content {
+    max-width: unset !important;
+  }
+}
+
+.user-prompt-modal {
+  min-height: 40vh !important;
+
+  .user-prompt-search {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 10px !important;
+    background-color: var(--gray) !important;
+  }
+
+  .user-prompt-list {
+    border: var(--border-in-light) !important;
+    border-radius: 10px !important;
+
+    .user-prompt-item {
+      display: flex !important;
+      justify-content: space-between !important;
+      padding: 10px !important;
+
+      &:not(:last-child) {
+        border-bottom: var(--border-in-light) !important;
+      }
+
+      .user-prompt-header {
+        max-width: calc(100% - 100px) !important;
+
+        .user-prompt-title {
+          font-size: 14px !important;
+          line-height: 2 !important;
+          font-weight: bold !important;
+        }
+        .user-prompt-content {
+          font-size: 12px !important;
+        }
+      }
+
+      .user-prompt-buttons {
+        display: flex !important;
+        align-items: center !important;
+        column-gap: 2px !important;
+
+        .user-prompt-button {
+          padding: 7px !important;
+        }
+      }
+    }
+  }
+}

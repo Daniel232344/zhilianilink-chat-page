@@ -1,0 +1,53 @@
+.app-card {
+  border-radius: 1.25rem; /* 20px */
+  padding: 0rem; /* 0px */
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: -0.3125rem;
+}
+
+.app-card-header {
+  display: flex;
+  align-items: flex-start; /* 从 center 改为 flex-start 使头像、名字和标签靠顶部对齐 */
+
+  margin-top: 0rem; /* 0px 减小顶部 margin */
+}
+
+.app-card-header-content {
+  margin-left: 1rem; /* 16px */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-card-header-content h2 {
+  margin: 0;
+  font-size: 1.25rem; /* 20px */
+}
+
+.app-card-header-content .ant-tag {
+  margin-right: 0rem; /* 没有值 */
+  margin-top: 0rem; /* 0px */
+}
+
+.app-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0px ; 
+}
+
+.start-talking-button {
+  background-color: #e6f0ff;
+  color: #2669f3;
+  border: none;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  border-radius: 0.25rem; /* 4px */
+}
+
+.start-talking-button:hover {
+  background-color: #3867ea;
+  color: #fff;
+}

@@ -1,0 +1,59 @@
+.component-market {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  
+  .top-menu {
+     display: flex;
+     h1{
+       margin-top: 16px;
+       flex: auto;
+     }
+     .search-bar {
+         display: flex;
+         align-items: center;
+         margin-top: 14px;
+         padding: 8px 0px;
+         .ant-btn, .ant-select, .ant-input-search {
+          margin-right: 16px; 
+        }
+        .ant-btn:last-child, .ant-input-search:last-child {
+          margin-right: 0; // 最后一个元素不需要右边距
+        }
+      }
+  }
+  .category-menu {
+    flex: 1;
+    display: flex;
+    margin-bottom: auto;
+    margin-top: 16px;
+    button {
+      margin-right: 20px;
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .start-chat-button {
+      background-color: #3867ea;
+      color: #fff;
+      border: none;
+      font-size: 16px;
+      padding: 15px 20px;
+      border-radius: 10px;
+    
+      &:hover {
+        background-color: #3867ea;
+        color: #fff;
+      }
+    }
+
+}
