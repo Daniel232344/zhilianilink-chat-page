@@ -29,8 +29,8 @@ import MinIcon from "@/icons/min.svg";
 import ResetIcon from "@/icons/reload.svg";
 import BreakIcon from "@/icons/break.svg";
 import SettingsIcon from "@/icons/chat-settings.svg";
-import DeleteIcon from "@/icons/clear.svg";
-import PinIcon from "@/icons/pin.svg";
+    import DeleteIcon from "@/icons/clear.svg";
+    import PinIcon from "@/icons/pin.svg";
 import EditIcon from "@/icons/rename.svg";
 import ConfirmIcon from "@/icons/confirm.svg";
 import CancelIcon from "@/icons/cancel.svg";
@@ -1293,7 +1293,7 @@ function _Chat() {
 
   return (
     <div style={{width:'100%'}} className={styles.chat} key={session.id}>
-      <div style={{display:'flex',borderBottom:" 1px solid rgba(187,187,187)",padding:'20px 10px'}} data-tauri-drag-region>
+      <div style={{display:'flex',borderBottom:" 0px solid rgba(187,187,187)",padding:'10px 20px'}} data-tauri-drag-region>
         {isMobileScreen && (
           <div className="window-actions">
             <div className={"window-action-button"}>
@@ -1308,7 +1308,7 @@ function _Chat() {
         )}
         <div className={`window-header-title ${styles["chat-body-title"]}`}>
           <div
-          style={{fontSize:"28px"}}
+          style={{fontSize:"20px"}}
             className={`window-header-main-title ${styles["chat-body-main-title"]}`}
             onClickCapture={() => setIsEditingMessage(true)}
           >
@@ -1495,7 +1495,7 @@ function _Chat() {
                       {Locale.Chat.Typing}
                     </div>
                   )}
-                  <div className={styles["chat-message-item"]}>
+                  <div className={`${styles["chat-message-item"]} ${isUser ? styles["user-message"] : styles["bot-message"]}`}>
                     <Markdown
                       key={message.streaming ? "loading" : "done"}
                       content={getMessageTextContent(message)}
@@ -1545,12 +1545,12 @@ function _Chat() {
                       </div>
                     )}
                   </div>
-
-                  <div className={styles["chat-message-action-date"]}>
+                  {/* <div className={styles["chat-message-action-date"]}>
                     {isContext
                       ? Locale.Chat.IsContext
                       : message.date.toLocaleString()}
-                  </div>
+                  </div> */}
+
                 </div>
               </div>
               {shouldShowClearContextDivider && <ClearContextDivider />}
