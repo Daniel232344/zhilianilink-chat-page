@@ -847,8 +847,89 @@ function _Chat() {
     }
   };
 
-  const doSubmit = (userInput: string) => {
+  const doSubmit = async (userInput: string) => {
     if (userInput.trim() === "") return;
+    // TODO: 添加特定的关键词回复，用于假数据
+    // 加载假数据json
+    const keywordsChatData = await import("./fakeChatData");
+    // 验证用户输入是否包含假数据中的关键词，并记录命中的keywords和response
+    const matchedKeywords = keywordsChatData.keywordsChatData.filter(item => userInput.includes(item.keywords));
+    // 如果命中了关键词，则使用命中的response替换用户输入
+    if (matchedKeywords.length > 0) {
+      const response = matchedKeywords[0].response;
+
+      // setIsLoading(true); // 设置加载状态
+
+      // 等待0.7秒
+      const documentResponse = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        role: "assistant" as const,
+        content: "",
+        streaming: true,
+      };
+
+      // 添加用户消息和初始的空助手消息
+      chatStore.updateCurrentSession((session) => {
+        session.messages.push(createMessage({ role: "user", content: userInput }));
+        session.messages.push(documentResponse);
+      });
+      setUserInput("");
+      setPromptHints([]);
+      setAutoScroll(true);
+
+
+      try {
+        // 模拟流式输出
+        const words = response.split('');
+        let currentContent = '';
+
+        // 每次处理10个字符
+        for (let i = 0; i < words.length; i += 10) {
+          await new Promise(resolve => setTimeout(resolve, 100));
+          // 将当前批次的字符(最多10个)添加到内容中
+          const chunk = words.slice(i, i + 10).join('');
+          currentContent += chunk;
+
+          chatStore.updateCurrentSession((session) => {
+            const lastMessage = session.messages[session.messages.length - 1];
+            if (lastMessage) {
+              lastMessage.content = currentContent;
+            }
+          });
+          setAutoScroll(true);
+        }
+
+        // 完成流式输出后,更新消息状态
+        chatStore.updateCurrentSession((session) => {
+          const lastMessage = session.messages[session.messages.length - 1];
+          if (lastMessage) {
+            lastMessage.streaming = false;
+          }
+        });
+        setAutoScroll(true);
+
+      } catch (error) {
+        console.error("Error during streaming response:", error);
+        // 发生错误时更新消息状态
+        chatStore.updateCurrentSession((session) => {
+          const lastMessage = session.messages[session.messages.length - 1];
+          if (lastMessage) {
+            lastMessage.streaming = false;
+            lastMessage.content = "Error: Failed to stream response.";
+            lastMessage.isError = true;
+          }
+        });
+      } finally {
+        if (!isMobileScreen) inputRef.current?.focus();
+        setAutoScroll(true);
+        setUserInput("");
+        setPromptHints([]);
+      }
+      return;
+    }
+
+    // 如果没有匹配关键词,执行原有的提交逻辑
     const matchCommand = chatCommands.match(userInput);
     if (matchCommand.matched) {
       setUserInput("");
