@@ -204,6 +204,16 @@ export function getRunFlowRequestBody(
 
 const DEFAULT_FLOWS: Flow[] = [
   {
+    flowName: "ilink-小链对话",
+    flowId: "9184898F-01B3-36B8-153E-98456B70527L",
+    components: [],
+    provider: {
+      id: "ilink",
+      providerName: "ILink",
+      providerType: "ilink",
+    }
+  },
+  {
     flowName: "Fuyu-8B",
     flowId: "9184898F-01B3-36B8-153E-98456B70527M",
     components: [{
