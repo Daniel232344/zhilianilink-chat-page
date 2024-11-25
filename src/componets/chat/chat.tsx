@@ -897,7 +897,6 @@ function _Chat() {
               lastMessage.content = currentContent;
             }
           });
-          setAutoScroll(true);
         }
 
         // 完成流式输出后,更新消息状态
