@@ -280,11 +280,15 @@
 }
 // 聊天界面整体
 .chat {
-  background: linear-gradient(180deg, #e6f3ff 0%, #ffffff 30%) !important;
+  // 添加背景渐变色
+  background: linear-gradient(180deg, #e1f1ff 0%, #ffffff 80%) !important;
   display: flex;
   flex-direction: column;
   position: relative;
   height: 100%;
+  // 上面左右两个添加圆角
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .chat-body {
@@ -356,12 +360,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+
   &:hover {
     .chat-message-edit {
       opacity: 0.9;
     }
-    
+
 
     .chat-message-actions {
       opacity: 1;
@@ -369,7 +373,7 @@
       transform: scale(1) translateY(0);
     }
   }
-  
+
 }
 
 .chat-message-user>.chat-message-container {
@@ -599,7 +603,7 @@
 }
 
 .chat-input-panel-inner:has(.chat-input:focus) {
-  border: 1px solid var(--primary);
+  border: 1px solid #23a1e7;
 }
 
 .chat-input {
