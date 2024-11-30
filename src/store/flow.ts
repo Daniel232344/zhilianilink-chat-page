@@ -214,6 +214,26 @@ const DEFAULT_FLOWS: Flow[] = [
     }
   },
   {
+    flowName: "论文阅读助手",
+    flowId: "9184898F-01B3-36B8-153E-98456B70527G",
+    components: [],
+    provider: {
+      id: "ilink",
+      providerName: "ILink",
+      providerType: "ilink",
+    }
+  },
+  {
+    flowName: "通义千问模型助手",
+    flowId: "9184898F-01B3-36B8-153E-98456B70527H",
+    components: [],
+    provider: {
+      id: "ilink",
+      providerName: "ILink",
+      providerType: "ilink",
+    }
+  },
+  {
     flowName: "Fuyu-8B",
     flowId: "9184898F-01B3-36B8-153E-98456B70527M",
     components: [{

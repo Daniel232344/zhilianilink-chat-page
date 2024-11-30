@@ -482,7 +482,7 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "你好，请在左下角设置中填写必要的API Key等参数后方可使用~",
+    BotHello: "你好，我是创新助手——小链！请问你有什么需要我帮忙解答的问题吗？",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
